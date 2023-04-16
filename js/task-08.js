@@ -1,20 +1,14 @@
-const loginForm = document.querySelector(".login-form");
+const form =document.querySelector("form")
 
-loginForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const {
-    elements: { email, password },
-  } = e.currentTarget;
-
-  if (email.value === "" || password.value === "") {
-    alert("Proszę podać email i hasło");
-  } else {
-    const user = {
-      email: email.value,
-      password: password.value,
-    };
-    console.log(user);
-    e.currentTarget.reset();
-  }
-});
+form.addEventListener("submit", event =>{
+    event.preventDefault()
+    if(form.elements.email.value ==="" || form.elements.password.value ==="" ) {
+        alert("Uzupełnij wszystkie pola formularzy!")
+    }
+    else{
+        const userDate = form.elements
+        console.log(`User login:${userDate.email.value} 
+        User password: ${userDate.password.value}`)
+        event.currentTarget.reset()
+    }
+})

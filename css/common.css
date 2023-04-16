@@ -22,3 +22,43 @@ button {
   padding: 8px 12px;
   cursor: pointer;
 }
+
+.gallery {
+  margin: auto;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery__item {
+  width: 220px;
+  height: 220px;
+}
+
+.gallery__pic {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+#boxes {
+  list-style: none;
+  gap: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .gallery {
+    flex-direction: row;
+  }
+}

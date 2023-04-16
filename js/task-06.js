@@ -1,8 +1,11 @@
 const inputEl = document.getElementById('validation-input');
-const { length } = inputEl.dataset;
 
 inputEl.addEventListener('blur', () => {
-  inputEl.value.length === Number(length)
-    ? (inputEl.className = 'valid')
-    : (inputEl.className = 'invalid');
+  if (inputEl.value.length === +inputEl.dataset.length) {
+    inputEl.classList.remove('invalid');
+    inputEl.classList.add('valid');
+  } else {
+    inputEl.classList.remove('valid');
+    inputEl.classList.add('invalid');
+  }
 });
