@@ -1,14 +1,17 @@
 const form =document.querySelector("form")
 
-form.addEventListener("submit", event =>{
-    event.preventDefault()
-    if(form.elements.email.value ==="" || form.elements.password.value ==="" ) {
-        alert("Uzupełnij wszystkie pola formularzy!")
-    }
-    else{
-        const userDate = form.elements
-        console.log(`User login:${userDate.email.value} 
-        User password: ${userDate.password.value}`)
-        event.currentTarget.reset()
-    }
-})
+const emailEl = document.querySelector('#email');
+const passwordEl = document.querySelector('#password');
+const formEl = document.querySelector('.login-form');
+
+formEl.addEventListener('submit', handleSubmit);
+
+function handleSubmit(event) {
+  event.preventDefault();
+  const { email, password } = event.currentTarget.elements;
+
+  if (email.value === '' || password.value === '') {
+    alert("Uzupełnij wszystkie pola formularzy!");
+  } else console.log({ email: email.value, password: password.value });
+  event.currentTarget.reset();
+}
